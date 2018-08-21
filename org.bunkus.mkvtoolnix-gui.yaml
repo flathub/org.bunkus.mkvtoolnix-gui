@@ -18,6 +18,7 @@ cleanup:
   - /lib/pkgconfig
   - /share/man
   - '*.a'
+  - '*.la'
 modules:     
   - name: ruby
     cleanup:
@@ -46,7 +47,15 @@ modules:
       - type: archive
         url: https://github.com/commonmark/cmark/archive/0.28.3.tar.gz
         sha256: acc98685d3c1b515ff787ac7c994188dadaf28a2d700c10c1221da4199bae1fc
-        
+
+  - name: file # runtime doesn't include "magic.h"
+    cleanup:
+      - /bin
+    sources:
+      - type: archive
+        url: ftp://ftp.astron.com/pub/file/file-5.34.tar.gz
+        sha256: f15a50dbbfa83fec0bd1161e8e191b092ec832720e30cd14536e044ac623b20a
+
   - name: mkvtoolnix
     buildsystem: simple
     build-commands:
