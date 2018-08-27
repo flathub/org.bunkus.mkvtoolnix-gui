@@ -20,7 +20,7 @@ cleanup:
   - '*.a'
   - '*.la'
 modules:     
-  - name: ruby
+  - name: ruby # for rake
     cleanup:
       - '*'
     sources:
@@ -35,8 +35,8 @@ modules:
       - ./b2 -j $FLATPAK_BUILDER_N_JOBS install
     sources:
       - type: archive
-        url: https://dl.bintray.com/boostorg/release/1.67.0/source/boost_1_67_0.tar.bz2
-        sha256: 2684c972994ee57fc5632e03bf044746f6eb45d4920c343937a465fd67a5adba
+        url: https://dl.bintray.com/boostorg/release/1.68.0/source/boost_1_68_0.tar.bz2
+        sha256: 7f6130bc3cf65f56a618888ce9d5ea704fa10b462be126ad053e80e553d6d8b7
 
   - name: cmark
     buildsystem: cmake-ninja
@@ -62,11 +62,7 @@ modules:
       - ./configure --prefix=/app --with-boost=/app
       - rake
       - rake install
-      - mv /app/share/mime/packages/mkvtoolnix.xml /app/share/mime/packages/org.bunkus.mkvtoolnix-gui.xml
-      - install -Dm644 -t /app/share/metainfo org.bunkus.mkvtoolnix-gui.appdata.xml
     sources:
-      - type: file
-        path: org.bunkus.mkvtoolnix-gui.appdata.xml
       - type: archive
-        url: https://mkvtoolnix.download/sources/mkvtoolnix-25.0.0.tar.xz
-        sha256: 834cb7abdd8849da3a6864055c8207cea44d14768147830918cd1a723c40bc33
+        url: https://mkvtoolnix.download/sources/mkvtoolnix-26.0.0.tar.xz
+        sha256: d51e63c356f9f0c92cc0b01ff6e78253954c74186be6ef4c40c5690d18fda7e0
