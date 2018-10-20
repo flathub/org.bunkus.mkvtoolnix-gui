@@ -19,7 +19,7 @@ cleanup:
   - /share/man
   - '*.a'
   - '*.la'
-modules:     
+modules:
   - name: ruby # for rake
     cleanup:
       - '*'
