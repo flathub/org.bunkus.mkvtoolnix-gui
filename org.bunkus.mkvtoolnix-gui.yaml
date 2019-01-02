@@ -1,7 +1,7 @@
 app-id: org.bunkus.mkvtoolnix-gui
 branch: stable
 runtime: org.kde.Platform
-runtime-version: '5.11'
+runtime-version: '5.12'
 sdk: org.kde.Sdk
 command: mkvtoolnix-gui
 rename-icon: mkvtoolnix-gui
@@ -20,13 +20,6 @@ cleanup:
   - '*.a'
   - '*.la'
 modules:
-  - name: ruby # for rake
-    cleanup:
-      - '*'
-    sources:
-      - type: archive
-        url: https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.1.tar.gz
-        sha256: dac81822325b79c3ba9532b048c2123357d3310b2b40024202f360251d9829b1
 
   - name: boost
     buildsystem: simple
@@ -42,24 +35,24 @@ modules:
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DCMARK_STATIC=OFF
+    cleanup:
+      - /bin
     sources:
       - type: archive
         url: https://github.com/commonmark/cmark/archive/0.28.3.tar.gz
         sha256: acc98685d3c1b515ff787ac7c994188dadaf28a2d700c10c1221da4199bae1fc
 
-  - name: file # runtime doesn't include "magic.h"
-    cleanup:
-      - /bin
-    sources:
-      - type: archive
-        url: ftp://ftp.astron.com/pub/file/file-5.34.tar.gz
-        sha256: f15a50dbbfa83fec0bd1161e8e191b092ec832720e30cd14536e044ac623b20a
-
   - name: mkvtoolnix
     buildsystem: simple
     build-commands:
-      - ./configure --prefix=/app --with-boost=/app
+      - ./configure
+        --enable-optimization
+        --enable-debug
+        --prefix=/app
+        --with-boost=/app
+        --with-docbook-xsl-root=/usr/share/xml/docbook/xml/xsl-stylesheets
       - rake
       - rake install
     sources:
