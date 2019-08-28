@@ -53,6 +53,7 @@ modules:
         --prefix=/app
         --with-boost=/app
         --with-docbook-xsl-root=/usr/share/xml/docbook/xml/xsl-stylesheets
+        --disable-update-check
       - rake
       - rake install
     sources:
