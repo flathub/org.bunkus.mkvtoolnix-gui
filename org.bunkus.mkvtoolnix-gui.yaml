@@ -58,5 +58,5 @@ modules:
       - rake install
     sources:
       - type: archive
-        url: https://mkvtoolnix.download/sources/mkvtoolnix-38.0.0.tar.xz
-        sha256: 0e1db5b5af6147dec245744a0d403120e53a44f6b81aad0d26c0f5c0e5515d00
+        url: https://mkvtoolnix.download/sources/mkvtoolnix-39.0.0.tar.xz
+        sha256: e9b515dec4007400b0f09fdca5bced0df56ca5d88ceccc996a2d68fb09453a15
