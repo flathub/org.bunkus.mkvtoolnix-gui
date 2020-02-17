@@ -1,5 +1,5 @@
 app-id: org.bunkus.mkvtoolnix-gui
-branch: stable
+default-branch: stable
 runtime: org.kde.Platform
 runtime-version: '5.14'
 sdk: org.kde.Sdk
