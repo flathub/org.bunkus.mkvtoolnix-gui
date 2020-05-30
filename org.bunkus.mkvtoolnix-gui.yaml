@@ -24,7 +24,7 @@ modules:
   - name: boost
     buildsystem: simple
     build-commands:
-      - ./bootstrap.sh --prefix=/app --with-libraries=regex,filesystem,system
+      - ./bootstrap.sh --prefix=/app --with-libraries=filesystem,system
       - ./b2 -j $FLATPAK_BUILDER_N_JOBS install
     sources:
       - type: archive
@@ -43,6 +43,12 @@ modules:
       - type: archive
         url: https://github.com/commonmark/cmark/archive/0.29.0.tar.gz
         sha256: 2558ace3cbeff85610de3bda32858f722b359acdadf0c4691851865bb84924a6
+
+  - name: libdvdcss
+    sources:
+      - type: archive
+        url: http://ftp.videolan.org/videolan/libdvdcss/1.4.2/libdvdcss-1.4.2.tar.bz2
+        sha256: 78c2ed77ec9c0d8fbed7bf7d3abc82068b8864be494cfad165821377ff3f2575
 
   - name: libdvdread
     sources:
