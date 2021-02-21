@@ -24,8 +24,9 @@ modules:
   - name: boost
     buildsystem: simple
     build-commands:
-      - ./bootstrap.sh --prefix=/app --with-libraries=filesystem,system
-      - ./b2 -j $FLATPAK_BUILDER_N_JOBS install
+      - ./bootstrap.sh --prefix=/app
+      - ./b2 -j $FLATPAK_BUILDER_N_JOBS headers
+      - cp -R boost /app/
     sources:
       - type: archive
         url: https://dl.bintray.com/boostorg/release/1.73.0/source/boost_1_73_0.tar.bz2
