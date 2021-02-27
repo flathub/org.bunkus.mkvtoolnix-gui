@@ -24,9 +24,8 @@ modules:
   - name: boost
     buildsystem: simple
     build-commands:
-      - ./bootstrap.sh --prefix=/app
-      - ./b2 -j $FLATPAK_BUILDER_N_JOBS headers
-      - cp -R boost /app/
+      - mkdir -p /app/include
+      - cp -R boost /app/include
     sources:
       - type: archive
         url: https://dl.bintray.com/boostorg/release/1.75.0/source/boost_1_75_0.tar.bz2
