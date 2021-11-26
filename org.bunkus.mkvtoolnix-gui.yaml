@@ -28,8 +28,8 @@ modules:
       - cp -R boost /app/include
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2
-        sha256: f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+        sha256: fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854
 
   - name: cmark
     buildsystem: cmake-ninja
@@ -41,20 +41,20 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://github.com/commonmark/cmark/archive/0.29.0.tar.gz
-        sha256: 2558ace3cbeff85610de3bda32858f722b359acdadf0c4691851865bb84924a6
+        url: https://github.com/commonmark/cmark/archive/refs/tags/0.30.2.tar.gz
+        sha256: 6c7d2bcaea1433d977d8fed0b55b71c9d045a7cdf616e3cd2dce9007da753db3
 
   - name: libdvdcss
     sources:
       - type: archive
-        url: http://ftp.videolan.org/videolan/libdvdcss/1.4.2/libdvdcss-1.4.2.tar.bz2
-        sha256: 78c2ed77ec9c0d8fbed7bf7d3abc82068b8864be494cfad165821377ff3f2575
+        url: https://download.videolan.org/pub/libdvdcss/1.4.3/libdvdcss-1.4.3.tar.bz2
+        sha256: 233cc92f5dc01c5d3a96f5b3582be7d5cee5a35a52d3a08158745d3d86070079
 
   - name: libdvdread
     sources:
       - type: archive
-        url: http://ftp.videolan.org/videolan/libdvdread/6.1.1/libdvdread-6.1.1.tar.bz2
-        sha256: 3e357309a17c5be3731385b9eabda6b7e3fa010f46022a06f104553bf8e21796
+        url: https://download.videolan.org/pub/videolan/libdvdread/6.1.2/libdvdread-6.1.2.tar.bz2
+        sha256: cc190f553758ced7571859e301f802cb4821f164d02bfacfd320c14a4e0da763
 
   - name: mkvtoolnix
     buildsystem: simple
