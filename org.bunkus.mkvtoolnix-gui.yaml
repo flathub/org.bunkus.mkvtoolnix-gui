@@ -3,7 +3,7 @@ default-branch: stable
 runtime: org.kde.Platform
 runtime-version: '5.15'
 sdk: org.kde.Sdk
-command: mkvtoolnix-gui
+command: mkvtoolnix
 rename-icon: mkvtoolnix-gui
 finish-args:
   - --socket=wayland
@@ -86,3 +86,11 @@ modules:
       - type: archive
         url: https://mkvtoolnix.download/sources/mkvtoolnix-65.0.0.tar.xz
         sha256: 0dddc9cc1bae26ceaac3a184482c50e6bb8add2d62e06ef08b55f9f0108bb92e
+
+  - name: mkvtoolnix-wrapper
+    buildsystem: simple
+    build-commands:
+      - install -m0755 entrypoint.sh /app/bin/mkvtoolnix
+    sources:
+      - type: file
+        path: entrypoint.sh
