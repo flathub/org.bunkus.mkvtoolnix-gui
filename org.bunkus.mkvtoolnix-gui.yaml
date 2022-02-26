@@ -13,10 +13,14 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=host
 cleanup:
+  - /bin/cmark
   - /gems
   - /include
   - /lib/cmake
   - /lib/pkgconfig
+  - /share/doc/libdvdcss/*.css
+  - /share/doc/libdvdcss/*.html
+  - /share/doc/libdvdcss/*.png
   - /share/man
   - '*.a'
   - '*.la'
