@@ -13,7 +13,7 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=host
 cleanup:
-  - /app/gems
+  - /gems
   - /include
   - /lib/cmake
   - /lib/pkgconfig
