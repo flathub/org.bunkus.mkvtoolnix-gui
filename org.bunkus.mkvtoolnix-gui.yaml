@@ -41,8 +41,8 @@ modules:
   - name: boost
     buildsystem: simple
     build-commands:
-      - mkdir -p /app/include
-      - cp -R boost /app/include
+      - ./bootstrap.sh --prefix=/app --with-libraries=filesystem,system
+      - ./b2 -j $FLATPAK_BUILDER_N_JOBS install
     sources:
       - type: archive
         url: https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
@@ -80,6 +80,7 @@ modules:
         --enable-optimization
         --enable-debug
         --prefix=/app
+        --with-boost=/app
         --with-docbook-xsl-root=/usr/share/xml/docbook/xml/xsl-stylesheets
         --disable-update-check
       - GEM_HOME=/app/gems /app/gems/bin/drake -j $FLATPAK_BUILDER_N_JOBS
