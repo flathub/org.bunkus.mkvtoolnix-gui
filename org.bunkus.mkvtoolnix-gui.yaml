@@ -62,6 +62,7 @@ modules:
   - name: mkvtoolnix
     buildsystem: simple
     build-commands:
+      # - ./autogen.sh
       - ./configure
         --enable-optimization
         --enable-debug
@@ -77,6 +78,10 @@ modules:
       - type: archive
         url: https://mkvtoolnix.download/sources/mkvtoolnix-73.0.0.tar.xz
         sha256: f31a129723571b46a974bc5d57d73733c1245ee429afd6ddaf274038e94e2280
+      # - type: git
+      #   url: https://gitlab.com/mbunkus/mkvtoolnix.git
+      #   branch: main
+      #   commit: 29f4f99e1b046c53812b90309badef4915db8510
 
   - name: mkvtoolnix-wrapper
     buildsystem: simple
