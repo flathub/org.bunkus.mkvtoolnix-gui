@@ -1,7 +1,7 @@
 app-id: org.bunkus.mkvtoolnix-gui
 default-branch: stable
 runtime: org.kde.Platform
-runtime-version: '6.2'
+runtime-version: '6.4'
 sdk: org.kde.Sdk
 command: mkvtoolnix
 rename-icon: mkvtoolnix-gui
