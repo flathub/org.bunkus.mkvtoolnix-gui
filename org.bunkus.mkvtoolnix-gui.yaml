@@ -73,6 +73,7 @@ modules:
         --with-docbook-xsl-root=/usr/share/xml/docbook/xml/xsl-stylesheets
         --disable-update-check
       - ./drake -j $FLATPAK_BUILDER_N_JOBS
+      - sed -i -Ee '/<mimetypes>/,/<.mimetypes>/d' share/metainfo/org.bunkus.mkvtoolnix-gui.appdata.xml
       - ./drake install
       - mkdir -p /app/share/doc/mkvtoolnix
       - install -m0644 -t/app/share/doc/mkvtoolnix AUTHORS CODE_OF_CONDUCT.md COPYING README.md
