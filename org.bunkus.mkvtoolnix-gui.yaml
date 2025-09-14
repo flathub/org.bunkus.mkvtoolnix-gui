@@ -77,8 +77,8 @@ modules:
       - install -m0644 -t/app/share/doc/mkvtoolnix AUTHORS CODE_OF_CONDUCT.md COPYING README.md
     sources:
       - type: archive
-        url: https://mkvtoolnix.download/sources/mkvtoolnix-94.0.tar.xz
-        sha256: babbcff2362c9dd00b2e79336eff83fad177603a51a458ef1fa421b27fbc4703
+        url: https://mkvtoolnix.download/sources/mkvtoolnix-95.0.tar.xz
+        sha256: 4e5481dee444f9995c176a42b6da2d2da1ba701cabec754b29dc79ea483a194f
       # - type: git
       #   url: https://gitlab.com/mbunkus/mkvtoolnix.git
       #   branch: main
@@ -99,6 +99,6 @@ modules:
       - install -m0644 -t/app/share/doc/cmark COPYING README.md
     sources:
       - type: archive
-        url: https://mkvtoolnix.download/sources/mkvtoolnix-94.0.tar.xz
-        sha256: babbcff2362c9dd00b2e79336eff83fad177603a51a458ef1fa421b27fbc4703
+        url: https://mkvtoolnix.download/sources/mkvtoolnix-95.0.tar.xz
+        sha256: 4e5481dee444f9995c176a42b6da2d2da1ba701cabec754b29dc79ea483a194f
 
