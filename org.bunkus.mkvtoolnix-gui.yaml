@@ -64,19 +64,15 @@ modules:
     buildsystem: simple
     build-commands:
       # - ./autogen.sh
-      - ./configure
-        --enable-optimization
-        --enable-debug
-        --prefix=/app
-        --with-boost=/app
-        --with-docbook-xsl-root=/usr/share/xml/docbook/xml/xsl-stylesheets
-        --with-qmake6=/usr/bin/qmake
+      - ./configure --enable-optimization --enable-debug --prefix=/app --with-boost=/app
+        --with-docbook-xsl-root=/usr/share/xml/docbook/xml/xsl-stylesheets --with-qmake6=/usr/bin/qmake
         --disable-update-check
       - ./drake -j $FLATPAK_BUILDER_N_JOBS
       - sed -i -Ee '/<mimetypes>/,/<.mimetypes>/d' share/metainfo/org.bunkus.mkvtoolnix-gui.metainfo.xml
       - ./drake install
       - mkdir -p /app/share/doc/mkvtoolnix
-      - install -m0644 -t/app/share/doc/mkvtoolnix AUTHORS CODE_OF_CONDUCT.md COPYING README.md
+      - install -m0644 -t/app/share/doc/mkvtoolnix AUTHORS CODE_OF_CONDUCT.md COPYING
+        README.md
     sources:
       - type: archive
         url: https://mkvtoolnix.download/sources/mkvtoolnix-103.0.tar.xz
@@ -89,8 +85,8 @@ modules:
       - name: ruby
         sources:
           - type: archive
-            url: https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.7.tar.gz
-            sha256: 23815a6d095696f7919090fdc3e2f9459b2c83d57224b2e446ce1f5f7333ef36
+            url: https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz
+            sha256: c35350682ff050b79702d57ade4516e7336063f510155d19fb2fb5b3f3909511
             x-checker-data:
               type: anitya
               project-id: 4223
