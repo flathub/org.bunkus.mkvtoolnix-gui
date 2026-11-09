@@ -89,8 +89,8 @@ modules:
       - name: ruby
         sources:
           - type: archive
-            url: https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.7.tar.gz
-            sha256: 23815a6d095696f7919090fdc3e2f9459b2c83d57224b2e446ce1f5f7333ef36
+            url: https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz
+            sha256: c35350682ff050b79702d57ade4516e7336063f510155d19fb2fb5b3f3909511
             x-checker-data:
               type: anitya
               project-id: 4223
